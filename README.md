@@ -3,13 +3,13 @@
 Installers for **MAINSPRING**, a private, offline-first planner for financial
 independence. Always grab the newest build from
 **[Releases → latest](../../releases/latest)**; the direct links below point at
-the current **v1.1.0**.
+the current **v1.1.1**.
 
 | OS | Download |
 |---|---|
-| **macOS** (Apple silicon + Intel) | [MAINSPRING_1.1.0_universal.dmg](../../releases/download/v1.1.0/MAINSPRING_1.1.0_universal.dmg) |
-| **Windows** | [MAINSPRING_1.1.0_x64-setup.exe](../../releases/download/v1.1.0/MAINSPRING_1.1.0_x64-setup.exe) · [.msi](../../releases/download/v1.1.0/MAINSPRING_1.1.0_x64_en-US.msi) |
-| **Linux** | [.AppImage](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.AppImage) · [.deb](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.deb) |
+| **macOS** (Apple silicon + Intel) | [MAINSPRING_1.1.1_universal.dmg](../../releases/download/v1.1.1/MAINSPRING_1.1.1_universal.dmg) |
+| **Windows** | [MAINSPRING_1.1.1_x64-setup.exe](../../releases/download/v1.1.1/MAINSPRING_1.1.1_x64-setup.exe) · [.msi](../../releases/download/v1.1.1/MAINSPRING_1.1.1_x64_en-US.msi) |
+| **Linux** | [.AppImage](../../releases/download/v1.1.1/MAINSPRING_1.1.1_amd64.AppImage) · [.deb](../../releases/download/v1.1.1/MAINSPRING_1.1.1_amd64.deb) |
 
 Builds are **unsigned**, so the OS will warn on first launch:
 
