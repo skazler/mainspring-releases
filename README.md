@@ -9,7 +9,7 @@ the current **v1.1.0**.
 |---|---|
 | **macOS** (Apple silicon + Intel) | [MAINSPRING_1.1.0_universal.dmg](../../releases/download/v1.1.0/MAINSPRING_1.1.0_universal.dmg) |
 | **Windows** | [MAINSPRING_1.1.0_x64-setup.exe](../../releases/download/v1.1.0/MAINSPRING_1.1.0_x64-setup.exe) · [.msi](../../releases/download/v1.1.0/MAINSPRING_1.1.0_x64_en-US.msi) |
-| **Linux** | [.AppImage](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.AppImage) · [.deb](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.deb) · [.rpm](../../releases/download/v1.1.0/MAINSPRING-1.1.0-1.x86_64.rpm) |
+| **Linux** | [.AppImage](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.AppImage) · [.deb](../../releases/download/v1.1.0/MAINSPRING_1.1.0_amd64.deb) |
 
 Builds are **unsigned**, so the OS will warn on first launch:
 
