@@ -5,13 +5,13 @@ independence. Always grab the newest build from
 **[Releases → latest](../../releases/latest)**.
 
 <!-- downloads:start -->
-Direct links for the current **v1.3.0**:
+Direct links for the current **v1.3.1**:
 
 | OS | Download |
 |---|---|
-| **macOS** (Apple silicon + Intel) | [MAINSPRING_1.3.0_universal.dmg](../../releases/download/v1.3.0/MAINSPRING_1.3.0_universal.dmg) |
-| **Windows** | [MAINSPRING_1.3.0_x64-setup.exe](../../releases/download/v1.3.0/MAINSPRING_1.3.0_x64-setup.exe) · [.msi](../../releases/download/v1.3.0/MAINSPRING_1.3.0_x64_en-US.msi) |
-| **Linux** | [MAINSPRING_1.3.0_amd64.AppImage](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.AppImage) · [.deb](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.deb) |
+| **macOS** (Apple silicon + Intel) | [MAINSPRING_1.3.1_universal.dmg](../../releases/download/v1.3.1/MAINSPRING_1.3.1_universal.dmg) |
+| **Windows** | [MAINSPRING_1.3.1_x64-setup.exe](../../releases/download/v1.3.1/MAINSPRING_1.3.1_x64-setup.exe) · [.msi](../../releases/download/v1.3.1/MAINSPRING_1.3.1_x64_en-US.msi) |
+| **Linux** | [MAINSPRING_1.3.1_amd64.AppImage](../../releases/download/v1.3.1/MAINSPRING_1.3.1_amd64.AppImage) · [.deb](../../releases/download/v1.3.1/MAINSPRING_1.3.1_amd64.deb) |
 <!-- downloads:end -->
 
 Builds are **unsigned**, so the OS will warn on first launch:
