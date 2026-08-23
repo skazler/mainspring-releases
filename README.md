@@ -2,14 +2,17 @@
 
 Installers for **MAINSPRING**, a private, offline-first planner for financial
 independence. Always grab the newest build from
-**[Releases → latest](../../releases/latest)**; the direct links below point at
-the current **v1.3.0**.
+**[Releases → latest](../../releases/latest)**.
+
+<!-- downloads:start -->
+Direct links for the current **v1.3.0**:
 
 | OS | Download |
 |---|---|
 | **macOS** (Apple silicon + Intel) | [MAINSPRING_1.3.0_universal.dmg](../../releases/download/v1.3.0/MAINSPRING_1.3.0_universal.dmg) |
 | **Windows** | [MAINSPRING_1.3.0_x64-setup.exe](../../releases/download/v1.3.0/MAINSPRING_1.3.0_x64-setup.exe) · [.msi](../../releases/download/v1.3.0/MAINSPRING_1.3.0_x64_en-US.msi) |
-| **Linux** | [.AppImage](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.AppImage) · [.deb](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.deb) |
+| **Linux** | [MAINSPRING_1.3.0_amd64.AppImage](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.AppImage) · [.deb](../../releases/download/v1.3.0/MAINSPRING_1.3.0_amd64.deb) |
+<!-- downloads:end -->
 
 Builds are **unsigned**, so the OS will warn on first launch:
 

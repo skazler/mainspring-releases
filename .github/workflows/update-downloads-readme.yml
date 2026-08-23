@@ -1,0 +1,78 @@
+name: Update downloads README
+
+# Rewrite the download table on this repo's front page whenever a release is
+# published, so the direct links always point at the newest installers.
+#
+# Fires on `release: published`, NOT on the build over in the private repo.
+# The build produces a DRAFT, and a draft's /releases/download/ URLs 404 until
+# someone hits Publish — updating at build time would leave this public landing
+# page advertising dead links for however long the draft sat unreviewed.
+#
+# v1.2.0 -> v1.3.0 was updated by hand, and was forgotten until someone noticed
+# the page still served the old version.
+#
+# workflow_dispatch is there to repair the page without cutting a release
+# (defaults to whatever is currently latest).
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to point at (blank = current latest)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: downloads-readme
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve tag and assets
+        id: rel
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_TAG: ${{ github.event.release.tag_name }}
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          TAG="${EVENT_TAG:-$INPUT_TAG}"
+          if [ -z "$TAG" ]; then
+            TAG=$(gh release view --repo "$GITHUB_REPOSITORY" --json tagName -q .tagName)
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          # A draft's download URLs 404, so refuse rather than publish dead links.
+          if [ "$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json isDraft -q .isDraft)" = "true" ]; then
+            echo "::error::$TAG is still a draft — its download URLs would 404. Publish it first."
+            exit 1
+          fi
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json assets -q '[.assets[].name]' > assets.json
+          echo "Assets for $TAG:"; cat assets.json
+
+      - name: Render the table
+        run: node .github/scripts/render-downloads.mjs "${{ steps.rel.outputs.tag }}" README.md < assets.json
+
+      - name: Commit if changed
+        env:
+          TAG: ${{ steps.rel.outputs.tag }}
+        run: |
+          set -euo pipefail
+          rm -f assets.json
+          if git diff --quiet -- README.md; then
+            echo "No change — README already points at $TAG."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: point download links at $TAG"
+          git push
