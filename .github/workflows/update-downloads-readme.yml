@@ -36,6 +36,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # A `release` event checks out the TAG, which leaves a detached HEAD
+          # that `git push` refuses. The README belongs on the default branch
+          # regardless — committing at the tag would also silently drop
+          # anything merged since it was cut.
+          ref: ${{ github.event.repository.default_branch }}
 
       - name: Resolve tag and assets
         id: rel
@@ -75,4 +81,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "docs: point download links at $TAG"
-          git push
+          # Another publish (or a hand edit) could have moved the branch while
+          # this ran; rebase and retry once rather than failing the job.
+          git push || { git pull --rebase --autostash && git push; }
